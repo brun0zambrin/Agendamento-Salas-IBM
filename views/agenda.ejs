@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+    </head>
+    <body>
+        <h1>Agendamentos</h1>
+        <ul class="resposta">
+            <% for(var i=0; i<respostas.length; i++) {%>
+            <li class="resposta">
+            <span><%= respostas[i].nome %></span>
+            <span><%= respostas[i].email %></span>
+            <span><%= respostas[i].sala %></span>
+            <span><%= respostas[i].date %></span>
+            <span><%= respostas[i].time %></span>
+            </li>
+            <% } %>
+            </ul>
+        </form><br>
+        <form action="/" method="GET">
+            <button type="submit" href="../index.html">Clique aqui para voltar</button><br>
+        </form>
+    </body>
+</html>
+
