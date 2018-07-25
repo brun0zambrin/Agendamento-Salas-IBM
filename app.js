@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient
 const app = express();
+var cfenv = require('cfenv');
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.set('view engine', 'ejs')
@@ -13,7 +14,7 @@ MongoClient.connect('mongodb://user:user123@ds137687.mlab.com:37687/ibmzambrin',
 console.log('Conectado ao Banco como USER')
 if (err) return console.log(err)
 db = client.db('ibmzambrin')
-app.listen(3000, function(){
+app.listen(appEnv.port, '0.0.0.0', function(){
     console.log('Server iniciado com sucesso')
     })
 })
